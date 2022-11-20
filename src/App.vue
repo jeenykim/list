@@ -1,30 +1,41 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'Home' }" class="logo"><span>home</span></router-link>
+    <router-link :to="{ name: 'Todo' }">board</router-link>
   </nav>
   <router-view/>
 </template>
 
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "MaruBuri";
+  src: url("assets/MaruBuri-Regular.woff2") format("woff2");
+}
+body{
+  font-family: "MaruBuri";
+  margin: 0 auto;
+  padding: 0;
+}
+nav{
+  background: rgba(0,0,0,0.8);
+  width:100%;
+  padding:10px;
   text-align: center;
-  color: #2c3e50;
+    box-sizing: border-box;
 }
-
-nav {
-  padding: 30px;
+a{
+  text-decoration: none;
+  color:white;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.logo{
+  float: left;
+  width:0;
 }
 </style>
